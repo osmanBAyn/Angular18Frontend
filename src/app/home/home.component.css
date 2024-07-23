@@ -1,6 +1,10 @@
 #header {
     width: 100%;
-    background-color: #fafafa;    
+    background-color: #f5eee4ea;    
+    position: sticky;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    z-index: 999;
 }
 #header > div{
     display: flex;
@@ -116,7 +120,7 @@
     margin: auto;
     margin-top: 5%;
     border-radius: 10px;
-    padding: 5% 15%;
+    padding: 7% 15%;
     color: #fff;
     box-shadow: 0px 0px 130px 7px rgba(99,17,254,0.4);;
 }
@@ -146,4 +150,121 @@
 #learn-more:hover{
     background-position: bottom;
     color: #FF0970;
+}
+/* Section www */
+section + section{
+    margin-top: 5%;
+}
+#sec2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    scroll-timeline-name: --squareTimeline;
+}
+#sec2 img{
+    margin-bottom: 5%;
+    width: 50%;
+    animation: fade linear;
+    animation-fill-mode: forwards ;
+    opacity: 0;
+    z-index: 1;
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 300px;
+       
+
+}
+@keyframes fade{
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#sec2 span{
+    text-align: center;
+    font-size: 4rem;
+    animation: fade linear;
+    animation-fill-mode: forwards ;
+    opacity: 0;
+   
+    animation-timeline: view();
+    animation-range-start: 200px;
+    animation-range-end: 300px;
+}
+#sec2 > div{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#sec2 > div img{
+    width: 12%;
+}
+
+/* Footer */
+footer{
+    background-color: #111B21;
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #fff;
+
+}
+footer .row{
+    width: 60%;
+    margin: auto;
+    margin-bottom: 1%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .column{
+    display: flex;
+    flex-direction: column;
+}
+footer #brand{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1%;
+}
+footer #brand #brand-logo{
+    margin-right: 1%;
+}
+footer #social{
+    display: flex;
+    gap: 5%;
+}
+footer #social i{
+    padding: 5%;
+    border: 1px #fff solid;
+    border-radius: 100%;
+    
+}
+footer .column span{
+    margin-top: 30%;
+    margin-bottom: 10%;
+    font-size: small;
+}
+footer .column a{
+    padding-top: 5%;
+    margin-bottom: 5%;
+    font-size: medium;
+    cursor: pointer;
+
+}
+#divider{
+    margin: auto;
+    margin-bottom: 1%;
+    width: 80%;
+    height: 1px;
+    background-color: #39454d;
+}
+#bottom{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
