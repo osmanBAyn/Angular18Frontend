@@ -1,0 +1,15 @@
+<div id="main-container">
+    <div id="options">
+        <div id="options2">
+            <div id="profile"></div>
+        
+            <app-google-icon pageName="chat" (change)="onClick($event)" [clicked]="selectedPageName() === 'chat'"></app-google-icon>
+            <app-google-icon pageName="group" (change)="onClick($event)" [clicked]="selectedPageName() === 'group'"></app-google-icon>
+            <app-google-icon pageName="person_add" (change)="onClick($event)" [clicked]="selectedPageName() === 'person_add'"></app-google-icon>
+        </div>
+        <div>
+            <app-google-icon pageName="settings" (change)="onClick($event)" [clicked]="selectedPageName() === 'settings'"></app-google-icon>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

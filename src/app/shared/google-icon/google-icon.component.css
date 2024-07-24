@@ -1,0 +1,9 @@
+.material-symbols-outlined{
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 100%;
+    padding: 10px;
+}
+.material-symbols-outlined:active{
+    background-color: #483746;
+}
