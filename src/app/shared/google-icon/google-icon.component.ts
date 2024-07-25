@@ -1,10 +1,11 @@
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Component, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-google-icon',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './google-icon.component.html',
   styleUrl: './google-icon.component.css',
   animations : [
