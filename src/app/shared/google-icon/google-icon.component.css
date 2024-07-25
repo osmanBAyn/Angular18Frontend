@@ -3,8 +3,10 @@
     cursor: pointer;
     border-radius: 100%;
     padding: 10px;
-    color: #c1aebb;
+    color: var(--text-color1);
+
 }
 .material-symbols-outlined:active{
-    background-color: #483746;
+    background-color: var(--icon-bg-color);
+
 }

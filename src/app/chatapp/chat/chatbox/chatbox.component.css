@@ -1,5 +1,4 @@
 :host{
-    background-color: #1a0b1a;
     border-radius: 10px;
     height: 90vh;
 }
@@ -12,12 +11,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #33202c;
+    background-color: var(--bg-color2);
     width: 70vw;
     padding-top: 1%;
     padding-bottom: 1%;
     gap: 1%;
-    color: #c1aebb;
+    color: var(--text-color1);
 }
 #profile{
     width: 40px;
@@ -28,11 +27,11 @@
 }
 #messages{
     width: 100%;
-    background-color: #1a0b18;
+    background-color: var(--bg-color4);
     flex-grow: 1;
 }
 #textbox{
-    background-color: #33202c;
+    background-color: var(--bg-color2);  
     width: 100%;
     padding-top: 1%;
     padding-bottom: 1%;
@@ -43,9 +42,11 @@
 }
 #text{
     width: 85%;
-    background-color: #422a3d;
+    background-color: var(--bg-color5);
+
     font-size: large;
-    color: #c1aebb;
+    color: var(--text-color1);
+
     padding: 1% 1%;
     border-radius: 10px;
 }

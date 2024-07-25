@@ -1,7 +1,21 @@
 :host{
+    --bg-color : #170c15;
+    /* --bg-color-b : #0C1317; */
+    --bg-color2 : #33202c;
+    /* --bg-color2-b : #202C33; */
+    --bg-color3: #21111f;
+    /* --bg-color3-b : #111B21; */
+    --bg-color4: #1a0b18;
+    /* --bg-color4-b : #0B141A; */
+    --bg-color5: #422a3d;
+    /* --bg-color5-b : #2A3942; */
+    --icon-bg-color : #483746;
+    /* --icon-bg-color-b : #374248; */
+    --text-color1 : #c1aebb;
+    /* --text-color1-b : #AEBAC1; */
     display: block;
     /* background-color: #0C1317; */
-    background-color: #170c15;
+    background-color: var(--bg-color);
     height: 100vh;
 
 }
@@ -21,7 +35,8 @@
     justify-content: space-between;
     padding: 1%;
     gap: 1rem;
-    background-color: #33202c;
+    background-color: var(--bg-color2);
+
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     height: 90vh;

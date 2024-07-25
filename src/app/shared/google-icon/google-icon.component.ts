@@ -13,7 +13,8 @@ import { RouterLink } from '@angular/router';
       state("clicked",
         style({
           "font-variation-settings" : "'FILL' 1",
-          "background-color" : "#483746"
+          // "background-color" : "#483746",
+          "background-color" : "var(--icon-bg-color)"
         })
       ),
       state("not-clicked",
