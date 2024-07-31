@@ -1,7 +1,7 @@
 <div id="main-container">
     <div id="options">
         <div id="options2">
-            <div id="profile"></div>
+            <div id="profile"><img [src]="userService.userData()?.profilePictureURL" /></div>
         
             <app-google-icon pageName="chat" (change)="onClick($event)" [clicked]="selectedPageName() === 'chat'"></app-google-icon>
             <app-google-icon pageName="group" (change)="onClick($event)" [clicked]="selectedPageName() === 'group'"></app-google-icon>

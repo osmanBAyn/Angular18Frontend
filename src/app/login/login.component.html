@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div id="login-container">
+    <div id="login-header">
+        <i class="fa-solid fa-message fa-3x" id="logo" style="color: #FF0970;"></i>
+        <span>Sign in</span>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Enter your email</mat-label>
+            <input matInput placeholder="example@example.com" formControlName="email" required />
+            @if (form.controls.email.invalid && form.controls.email.touched && form.controls.email.dirty) {
+                <mat-error>Please provide a valid email</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Enter your password</mat-label>
+            <input matInput required formControlName="password" />
+            @if (form.controls.password.invalid && form.controls.password.touched && form.controls.password.dirty) {
+                <mat-error>Please provide a valid password</mat-error>
+            }
+        </mat-form-field>
+        <div id="other-options">
+            <span>Or use one of these options</span>
+            <div  (click)="onGoogle()" id="options">
+                <i class="fa-brands fa-google fa-2x"></i>
+            </div>
+        </div>
+        <div id="controls">
+            <button type="button" mat-button [routerLink]="['','register']">Create Account</button>
+            <button mat-flat-button type="submit">Next</button>
+        </div>
+    </form>
+</div>

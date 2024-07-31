@@ -1,0 +1,27 @@
+<header id="header">
+    <div>
+        <div id="logo-cont">
+            <i class="fa-solid fa-message fa-lg" id="logo" style="color: #FF0970;"></i>
+            <h4>Chatapp</h4>
+        </div>
+        <div class="spacer">
+            <a>Features</a>
+            <a>Security</a>
+            <a>News</a>
+            <a>Help Center</a>
+            <a [routerLink]="['','chatapp']">Let's Chat</a>
+        </div>
+        <div id="link-container">
+            <!-- <a class="link" href="" routerLink="login">Login</a>
+            <a class="link" href="">Register</a> -->
+            @if(!userService.userData()){
+                <button mat-button [routerLink]="['','login']">Login</button>
+                <button mat-button [routerLink]="['','register']">Register</button>
+            }
+            @else{
+                Signed in with {{userService.userData()?.email}}
+                <button mat-button (click)="onLogout()">Logout</button>
+            }
+        </div>
+    </div>
+</header>

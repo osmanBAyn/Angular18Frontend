@@ -3,6 +3,7 @@ import { Component, effect, ElementRef, inject, OnInit, signal } from '@angular/
 import { GoogleIconComponent } from "../shared/google-icon/google-icon.component";
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ThemeService } from './theme.service';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { ThemeService } from './theme.service';
   styleUrl: './chatapp.component.css',
 })
 export class ChatappComponent implements OnInit{
-
+  userService = inject(UserService);
   selectedPageName = signal<string>("");
   router = inject(Router);
   route = inject(ActivatedRoute);
