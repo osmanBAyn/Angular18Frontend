@@ -28,6 +28,11 @@
     background-color: #fff;
     position: relative;
 }
+#profile img{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
 #profile::after{
     content: "";
     position: absolute;

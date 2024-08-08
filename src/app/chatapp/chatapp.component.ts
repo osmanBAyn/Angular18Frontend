@@ -4,6 +4,7 @@ import { GoogleIconComponent } from "../shared/google-icon/google-icon.component
 import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { ThemeService } from './theme.service';
 import { UserService } from '../user.service';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class ChatappComponent implements OnInit{
   selectedPageName = signal<string>("");
   router = inject(Router);
   route = inject(ActivatedRoute);
+  http = inject(HttpClient);
   constructor(){
     effect(()=>{
       for(let [key, value] of Object.entries(this.themeService.currentTheme())){
@@ -36,6 +38,9 @@ export class ChatappComponent implements OnInit{
       case "groups":
         activateTab = "group";
         break;
+      case "addFriend":
+        activateTab = "person_add";
+        break;
       case "settings":
         activateTab = "settings"
         break;
@@ -52,9 +57,13 @@ export class ChatappComponent implements OnInit{
       case "group":
         navigateTo = "groups";
         break;
+      case "person_add":
+        navigateTo = "addFriend"
+        break;
       case "settings":
         navigateTo = "settings"
         break;
+      
     }
     this.router.navigate(["chatapp", navigateTo]);
   }

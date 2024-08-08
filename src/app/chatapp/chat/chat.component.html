@@ -1,14 +1,21 @@
 <div id="chats">
     <div id="profiles">
-        <div id="profile"></div>
-        <div id="profile"></div>
-        <div id="profile"></div>
-        <div id="profile"></div>
-        <div id="profile"></div>
-
+        @for(conv of conversations(); track conv.id){
+            <div id="profile" (click)="onSelectConv(conv)" ><img [src]="conv.users[0].profilePictureURL" referrerpolicy="no-referrer"/></div>
+        }
+        <app-google-icon pageName="add_circle" (change)="onSelectConv(undefined)" [clicked]="selectedConversation()===undefined"></app-google-icon>
     </div>
     <div id="names">
 
     </div>
 </div>
-<app-chatbox></app-chatbox>
+@if (selectedConversation()===undefined) {
+    @for(friend of friends(); track friend.id){
+        <h3 (click)="onAddConv(friend)">{{friend.email}}</h3>
+    }
+}
+@else {
+    @for(conversation of conversations(); track conversation.id){
+        <app-chatbox [conversation]="conversation" [isSelected]="conversation.id===selectedConversation()?.id"></app-chatbox>
+    }
+}

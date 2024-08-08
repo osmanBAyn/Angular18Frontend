@@ -11,17 +11,6 @@ import { UserService } from '../user.service';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit{
-  http = inject(HttpClient);
-  userService = inject(UserService);
+export class HomeComponent{
   
-  ngOnInit(): void {
-      this.http.get("http://localhost:3000/users/isAuthenticated", {
-        withCredentials : true
-      }).subscribe({
-        next : (val : any) =>{
-          this.userService.setUser(val.User);
-        }
-      })
-  }
 }

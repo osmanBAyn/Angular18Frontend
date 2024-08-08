@@ -1,0 +1,4 @@
+<p>add-friend works!</p>
+@for(user of availableUsers(); track user.id){
+    <h5 (click)="onAddFriend(user.id)">{{user.email}}</h5>
+}

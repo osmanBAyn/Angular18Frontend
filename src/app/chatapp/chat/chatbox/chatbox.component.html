@@ -1,17 +1,21 @@
-<div id="chatbox-container">
-    <div id="selected-user">
-        <div id="profile"></div>
-        <span>Osman Baran Ayaydın</span>
-    </div>
-    <div id="messages">
-
-    </div>
-    <div id="textbox">
-        <div>
-            <app-google-icon pageName="add_reaction" [clicked]="false"></app-google-icon>
-            <app-google-icon pageName="attach_file" [clicked]="false"></app-google-icon>
+@if(isSelected()){
+    <div id="chatbox-container">
+        <div id="selected-user">
+            <div id="profile"><img [src]="convWith().profilePictureURL" referrerpolicy="no-referrer"></div>
+            <span>{{convWith().email}}</span>
         </div>
-        
-        <div id="text">Text here!</div>
+        <div id="messages">
+            @for(message of messagesReverse(); track message.id){
+                <app-message [message]="message"></app-message>
+            }
+            <div id="anchor"></div>
+        </div>
+        <div id="textbox">
+            <div>
+                <app-google-icon pageName="add_reaction" [clicked]="false"></app-google-icon>
+                <app-google-icon pageName="attach_file" [clicked]="false"></app-google-icon>
+            </div>
+            <div id="text"><textarea placeholder="Text here" #text></textarea><app-google-icon pageName="send" [clicked]="false" (change)="onSendMessage()"></app-google-icon></div>
+        </div>
     </div>
-</div>
+}

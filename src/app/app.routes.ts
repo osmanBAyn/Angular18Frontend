@@ -7,6 +7,7 @@ import { SettingsComponent } from './chatapp/settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {authGuard} from './auth/auth.guard';
+import { AddFriendComponent } from './chatapp/add-friend/add-friend.component';
 export const routes: Routes = [
   {
     path: 'chatapp',
@@ -29,6 +30,10 @@ export const routes: Routes = [
       {
         path : 'settings',
         component : SettingsComponent
+      },
+      {
+        path : 'addFriend',
+        component : AddFriendComponent
       }
     ],
   },
